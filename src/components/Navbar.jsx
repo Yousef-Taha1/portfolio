@@ -6,23 +6,25 @@ export const Navbar = ({menuOpen, setMenuOpen}) => {
     const navRef = useRef(null);
 
     useEffect(() => {
-        document.body.style.overflower = menuOpen ? "hidden" : "";
-
+        document.body.style.overflow = menuOpen ? "hidden" : "";
+    
         // Closing the hamburger if clicked outside
         const handleClickOutside = (event) => {
-            if (navRef.current && !navRef.current.contains(event.target)) {
+            // Check if the clicked element is part of the menu options
+            const isMenuOption = event.target.closest(".menu-option"); // Add a class to your menu options
+            if (navRef.current && !navRef.current.contains(event.target) && !isMenuOption) {
                 setMenuOpen(false);
             }
         };
-
+    
         if (menuOpen) {
             document.addEventListener("mousedown", handleClickOutside);
         }
-
+    
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, [menuOpen])
+    }, [menuOpen, setMenuOpen]);
 
     return (
     <nav 
