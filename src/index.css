@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-htmnl, body {
+html, body {
   margin: 0;
   padding: 0;
   font-family: "Space Grotesk", sans-serif;
@@ -42,7 +42,7 @@ htmnl, body {
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.reveal.visible{
+.reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
