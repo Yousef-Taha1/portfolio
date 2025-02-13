@@ -26,7 +26,7 @@ export const MobileMenu = ({menuOpen, setMenuOpen}) => {
             <a
                 href="#home"
                 onClick={() => setMenuOpen(false)}
-                className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
+                className={`menu-option text-2xl font-semibold text-white my-4 transform transition-transform duration-300
                             ${menuOpen
                                 ? "opacity-100 translate-y-0"
                                 : "opacity-0 translate-y-5"
@@ -39,7 +39,7 @@ export const MobileMenu = ({menuOpen, setMenuOpen}) => {
             <a
                 href="#about" 
                 onClick={() => setMenuOpen(false)}
-                className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
+                className={`menu-option text-2xl font-semibold text-white my-4 transform transition-transform duration-300
                     ${menuOpen
                         ? "opacity-100 translate-y-0"
                         : "opacity-0 translate-y-5"
@@ -52,7 +52,7 @@ export const MobileMenu = ({menuOpen, setMenuOpen}) => {
             <a
                 href="#projects"
                 onClick={() => setMenuOpen(false)}
-                className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
+                className={`menu-option text-2xl font-semibold text-white my-4 transform transition-transform duration-300
                     ${menuOpen
                         ? "opacity-100 translate-y-0"
                         : "opacity-0 translate-y-5"
@@ -63,9 +63,26 @@ export const MobileMenu = ({menuOpen, setMenuOpen}) => {
             </a>
 
             <a
+                href="/portfolio/CV_Yousef_Taha.pdf"
+                onClick={() => setMenuOpen(false)}
+                className={`menu-option text-2xl font-semibold text-white my-4 transform transition-transform duration-300
+                            ${
+                                menuOpen
+                                    ? "opacity-100 translate-y-0"
+                                    : "opacity-0 translate-y-5"
+                            }
+                        `}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Resume"
+            >
+                Resume
+            </a>
+
+            <a
                 href="#contact" 
                 onClick={() => setMenuOpen(false)}
-                className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
+                className={`menu-option text-2xl font-semibold text-white my-4 transform transition-transform duration-300
                     ${menuOpen
                         ? "opacity-100 translate-y-0"
                         : "opacity-0 translate-y-5"
