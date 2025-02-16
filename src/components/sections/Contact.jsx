@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import {RevealOnScroll} from '../RevealOnScroll'
 import emailjs from 'emailjs-com'
+import sent from '../../assets/sent.gif';
+import failed from '../../assets/failed.gif';
 
 
 
@@ -12,24 +14,37 @@ export const Contact = () => {
         message:"",
     });
 
-
+    // tracking submission
+    const [sendStatus, setSendStatus] = useState ("");
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm(
-            import.meta.env.VITE_SERVICE_ID, 
-            import.meta.env.VITE_TEMPLATE_ID,
-            e.target,
-            import.meta.env.VITE_PUBLIC_KEY
-            )
-            .then((result) => {
-            alert("Message Sent!");
-            setFormData({from_name: "", email: "", message: ""})
+        // Mocking the emailjs call for testing
+        setTimeout(() => {
+            // Simulate success
+            setSendStatus("success"); 
+            setFormData({from_name: "", email: "", message: ""});  // Reset form
+            setTimeout(() => setSendStatus(""), 3000); // Reset status after 3 seconds for animation
+        }, 1000); // Simulate a delay
 
-        })
-        .catch(() => alert("Oops! Something went wrong. Please try again."));
+
+        // emailjs.sendForm(
+        //     import.meta.env.VITE_SERVICE_ID, 
+        //     import.meta.env.VITE_TEMPLATE_ID,
+        //     e.target,
+        //     import.meta.env.VITE_PUBLIC_KEY
+        //     )
+        //     .then((result) => {
+        //         setSendStatus("success"); // Set status to success
+        //         setFormData({from_name: "", email: "", message: ""}); // Reset form
+        //         setTimeout(() => setSendStatus(""), 3000); // Reset status after 3 seconds for animation
+        //     })
+        //     .catch(() => {
+        //         setSendStatus("error"); // Set status to error
+        //         setTimeout(() => setSendStatus(""), 3000); // Reset status after 3 seconds
+        //     });
     };
 
     return (
@@ -93,6 +108,30 @@ export const Contact = () => {
 
                 </form>
 
+                {/* Conditionally Render GIFs based on the sendStatus */}
+                {sendStatus === "success" && (
+                    <div className="fixed top-0 left-0 right-0 bottom-50 flex items-center justify-center bg-transparent z-50">
+                        <div className="mt-4 text-center animate__animated animate__fadeIn">
+                            <img 
+                                src={sent}
+                                alt="Success"
+                                className="mx-auto w-70 h-70"
+                            />
+                        </div>
+                    </div>
+                    )}
+                {sendStatus === "error" && (
+                    <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-transparent z-50">
+                        <div className="mt-4 text-center animate__animated animate__fadeIn">
+                            <img 
+                                src={failed}
+                                alt="Error"
+                                className="mx-auto w-70 h-70"
+                            />
+                        </div>
+                    </div>
+                )}
+                    
             </div>
             </RevealOnScroll>
 
