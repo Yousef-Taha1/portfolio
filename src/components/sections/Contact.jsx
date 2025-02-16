@@ -115,18 +115,18 @@ export const Contact = () => {
                             <img 
                                 src={sent}
                                 alt="Success"
-                                className="mx-auto w-70 h-70"
+                                className="mx-auto w-70 h-70 rounded-[50px] border-8 border-[#052A76]"
                             />
                         </div>
                     </div>
                     )}
                 {sendStatus === "error" && (
-                    <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-transparent z-50">
+                    <div className="fixed top-0 left-0 right-0 bottom-50 flex items-center justify-center bg-transparent z-50">
                         <div className="mt-4 text-center animate__animated animate__fadeIn">
                             <img 
                                 src={failed}
                                 alt="Error"
-                                className="mx-auto w-70 h-70"
+                                className="mx-auto w-70 h-70 rounded-[50px] border-8 border-[#052A76]"
                             />
                         </div>
                     </div>
