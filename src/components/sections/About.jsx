@@ -1,4 +1,5 @@
 import {RevealOnScroll} from '../RevealOnScroll'
+import mypic from '../../assets/mypic.jpg';
 
 
 export const About = () => {
@@ -25,6 +26,20 @@ export const About = () => {
         className="min-h-screen flex items-center justify-center py-20"
         >
             <RevealOnScroll>
+            <div className="flex items-center mb-8">
+                        <div className="min-w-screen h-100 overflow-hidden mr-5 ml-5 relative">
+                            <img 
+                                src={mypic}
+                                alt="Yousef Taha" 
+                                className="w-full h-full object-cover object-top"
+                                style={{
+                                    objectPosition: '50% 7%',
+                                    maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 1%, rgba(0, 0, 0, 1) 99%, rgba(0, 0, 0, 0) 100%)',
+                                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 1%, rgba(0, 0, 0, 1) 99%, rgba(0, 0, 0, 0) 100%)'
+                                }}
+                            />
+                        </div>
+            </div>            
             <div className="max-w-3xl mx-auto px-4">
                 <h2 
                     className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center"
