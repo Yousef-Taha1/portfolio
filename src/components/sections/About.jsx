@@ -97,6 +97,21 @@ export const About = () => {
                                 </div>
                             </div>
                         </div>
+
+                        <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
+                            <h3 className="text-xl font-bold mb-4"> 💪 Hobbies & Interests 🌸 </h3>
+                            <div className="space-y-4 text-gray-300">
+                                <div>
+                                    <li className="font-semibold"> <strong> Fitness & Strength Training</strong></li>
+                                    <p> Consistently committed to maintaining an active lifestyle through regular gym
+                                    training, focusing on discipline and well-being.</p>
+                                </div>
+                                <div>
+                                    <li className="font-semibold"> <strong> Perfumery & Scent Exploration</strong></li>
+                                    <p> Passionate about fragrances, scent compositions, and the art of perfumemaking, with a deep interest in fragrance notes.</p>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
             </RevealOnScroll>
