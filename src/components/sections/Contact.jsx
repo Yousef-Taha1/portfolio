@@ -21,30 +21,30 @@ export const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Mocking the emailjs call for testing
-        setTimeout(() => {
-            // Simulate success
-            setSendStatus("success"); 
-            setFormData({from_name: "", email: "", message: ""});  // Reset form
-            setTimeout(() => setSendStatus(""), 3000); // Reset status after 3 seconds for animation
-        }, 1000); // Simulate a delay
+        // // Mocking the emailjs call for testing
+        // setTimeout(() => {
+        //     // Simulate success
+        //     setSendStatus("success"); 
+        //     setFormData({from_name: "", email: "", message: ""});  // Reset form
+        //     setTimeout(() => setSendStatus(""), 3000); // Reset status after 3 seconds for animation
+        // }, 1000); // Simulate a delay
 
 
-        // emailjs.sendForm(
-        //     import.meta.env.VITE_SERVICE_ID, 
-        //     import.meta.env.VITE_TEMPLATE_ID,
-        //     e.target,
-        //     import.meta.env.VITE_PUBLIC_KEY
-        //     )
-        //     .then((result) => {
-        //         setSendStatus("success"); // Set status to success
-        //         setFormData({from_name: "", email: "", message: ""}); // Reset form
-        //         setTimeout(() => setSendStatus(""), 3000); // Reset status after 3 seconds for animation
-        //     })
-        //     .catch(() => {
-        //         setSendStatus("error"); // Set status to error
-        //         setTimeout(() => setSendStatus(""), 3000); // Reset status after 3 seconds
-        //     });
+        emailjs.sendForm(
+            import.meta.env.VITE_SERVICE_ID, 
+            import.meta.env.VITE_TEMPLATE_ID,
+            e.target,
+            import.meta.env.VITE_PUBLIC_KEY
+            )
+            .then((result) => {
+                setSendStatus("success"); // Set status to success
+                setFormData({from_name: "", email: "", message: ""}); // Reset form
+                setTimeout(() => setSendStatus(""), 3000); // Reset status after 3 seconds for animation
+            })
+            .catch(() => {
+                setSendStatus("error"); // Set status to error
+                setTimeout(() => setSendStatus(""), 3000); // Reset status after 3 seconds
+            });
     };
 
     return (
